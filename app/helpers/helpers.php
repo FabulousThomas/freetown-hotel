@@ -28,6 +28,26 @@ function flash_msg($name = '', $message = '', $class = 'alert-success')
    }
 }
 
+function alert($type, $message)
+{
+   $class = ($type == "success") ? "alert-success" : "alert-danger";
+
+   echo <<<alert
+      <div class="position-fixed bottom-0 start-0 p-3" style="z-index: 2000">
+         <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="toast-header">
+               <strong class="me-auto">Message alert</strong>
+               <small>Just Now</small>
+               <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+            </div>
+            <div class="toast-body">
+               $message
+            </div>
+         </div>
+      </div>
+   alert;
+}
+
 function redirect($url)
 {
    // header("Location: " . URLROOT . '/' . $url);
@@ -49,6 +69,21 @@ function isUserLoggedIn()
       return true;
    } else {
       return false;
+   }
+}
+
+function isActiveBar($value)
+{
+   return $_SERVER['REQUEST_URI'] === URLROOT . '/' . $value;
+}
+
+function isUrl($value)
+{
+   $url = $_SERVER['REQUEST_URI'];
+   $urlParts = explode('/', $url);
+   $page = end($urlParts);
+   if ($page === $value) {
+      echo 'active';
    }
 }
 
