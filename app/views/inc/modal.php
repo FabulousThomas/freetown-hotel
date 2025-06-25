@@ -114,3 +114,122 @@
   </div>
 
   <!-- Modal Booking Details -->
+  <div class="modal fade modal-center" id="booking_details" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false" role="dialog" aria-labelledby="modalTitleId" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header pb-2">
+          <h5 class="modal-title d-flex align-items-center">Booking Details</h5>
+          <button type="reset" class="btn-close shadow-none" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="text-center">
+            <div class="table-responsive-md">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">Name</th>
+                    <th scope="col">Booking ID</th>
+                    <th scope="col">Room ID</th>
+                    <th scope="col">Days</th>
+                    <th scope="col">Price</th>
+                    <th scope="col">Total Cost</th>
+                    <th scope="col">Status</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="">
+                    <td><input type="text" class="form-crontrol text-center w-100 shadow-none border-0" readonly id="name"></td>
+                    <td><input type="text" class="form-crontrol text-center w-100 shadow-none border-0" readonly id="bk_id"></td>
+                    <td><input type="text" class="form-crontrol text-center w-100 shadow-none border-0" readonly id="rm_id"></td>
+                    <td><input type="text" class="form-crontrol text-center w-100 shadow-none border-0" readonly id="days"></td>
+                    <td><input type="text" class="form-crontrol text-center w-100 shadow-none border-0" readonly id="price"></td>
+                    <td><input type="text" class="form-crontrol text-center w-100 shadow-none border-0" readonly id="cost"></td>
+                    <td><input type="text" class="form-crontrol text-center w-100 shadow-none border-0" readonly id="status"></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Booking RECEIPT -->
+  <div class="modal fade modal-center" id="booking_receipt" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false" role="dialog" aria-labelledby="modalTitleId" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header pb-2">
+          <h5 class="modal-title d-flex align-items-center">Booking Receipt</h5>
+          <button type="reset" class="btn-close shadow-none" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="text-cente">
+            <div class="px-3 position-relative">
+              <div class="d-flex justify-content-between mt-3 mb-3">
+                <?= SITELOGO ?>
+                <h3 class="text-uppercase text-success">Receipt</h3>
+              </div>
+
+              <div class="d-flex justify-content-evenly align-items-cente">
+                <div class="mb-5">
+                  <p class="mb-0 d-flex align-items-center">Name: <input type="text" class="text-center shadow-none border-0" readonly id="u_name"></p>
+                  <p class="mb-0 d-flex align-items-center">Email: <input type="text" class="text-center shadow-none border-0" readonly id="email"></p>
+                  <p class="mb-0 d-flex align-items-center">Phone: <input type="text" class="text-center shadow-none border-0" readonly id="phone"></p>
+                  <p class="mb-0 d-flex align-items-center">User ID: <input type="text" class="text-center shadow-none border-0" readonly id="user_id"></p>
+                </div>
+
+                <div class="mb-5">
+                  <p class="mb-0 d-flex align-items-center">Room ID: <input type="text" class="text-center shadow-none border-0" readonly id="room_id"></p>
+                  <p class="mb-0 d-flex align-items-center">Check In: <input type="text" class="text-center shadow-none border-0" readonly id="check_in"></p>
+                  <p class="mb-0 d-flex align-items-center">Check Out: <input type="text" class="text-center shadow-none border-0" readonly id="check_out"></p>
+                </div>
+              </div>
+
+              <div class="table-responsive-md">
+                <table class="table borde text-center align-middle">
+                  <thead class="table-light border">
+                    <caption>
+                      <!-- Receipt -->
+                    </caption>
+                    <tr class="">
+                      <th width="50%">Description</th>
+                      <th>Days</th>
+                      <th>Price</th>
+                      <th>Amount</th>
+                    </tr>
+                  </thead>
+                  <tbody class="table-group-divide borde">
+                    <tr class="">
+                      <td scope="row">Room Name: <input type="text" class="form-crontrol text-center w-100 shadow-none border-0" readonly id="r_name">
+                        <span>Booking ID: <input type="text" class="form-crontrol text-center w-100 shadow-none border-0" readonly id="book_id"></span>
+                        <span>Room Type: <input type="text" class="form-crontrol text-center w-100 shadow-none border-0" readonly id="r_type"></span>
+                      </td>
+                      <td><input type="text" class="form-crontrol text-center w-100 shadow-none border-0" readonly id="r_days"></td>
+                      <td><input type="text" class="form-crontrol text-center w-100 shadow-none border-0" readonly id="r_price"></td>
+                      <td><input type="text" class="form-crontrol text-center w-100 shadow-none border-0" readonly id="r_cost"></td>
+                    </tr>
+                    <tr class="float-en">
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td>Subtotal: <input type="text" class="form-crontrol d-inline text-center w-100 shadow-none border-0" readonly id="sub_total">
+                        <span>Total Tax: <?= number_format(0, 2) ?></span>
+                      </td>
+                    </tr>
+                  </tbody>
+                  <tfoot>
+                    <tr>
+                      <td>
+                        <h6 class="text-danger mb-0">Thank you for your patronage</h6>
+                      </td>
+                    </tr>
+                  </tfoot>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
