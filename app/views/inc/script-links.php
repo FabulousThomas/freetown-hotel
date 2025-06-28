@@ -3,7 +3,7 @@
 <script src="<?= URLROOT ?>/assets/js/sweet-alert.js"></script>
 <script src="<?= URLROOT ?>/assets/js/bootstrap5.2.3.min.js"></script>
 <script src="<?= URLROOT ?>/assets/js/swipper-10.2.0.js"></script>
-<script src="<?= URLROOT ?>/assets/js/filter.js"></script>
+<script src="<?= URLROOT ?>/assets/js/main.js"></script>
 <!-- Initializer Swiper -->
 <script src="<?= URLROOT ?>/assets/js/swipper-script.js"></script>
 
